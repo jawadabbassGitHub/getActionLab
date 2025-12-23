@@ -3,19 +3,18 @@ name: First workflow lab
 on:
   push:
     branches:
-    - main
+      - main
 
 jobs:
   example-job:
-    runs-on: ubuntu-latest 
+    runs-on: ubuntu-latest
 
     steps:
-      - name: Print a welcome message 
-        run: echo " welcome to the first step on the workflows githubAction"
+      - name: Checkout repository
+        uses: actions/checkout@v4
 
-      - name: checkout repository
-        uses: actions/checkout@v6.0.1
+      - name: Print a welcome message
+        run: echo "Welcome to my first GitHub Actions workflow"
 
-      - name: List repository files 
+      - name: List repository files
         run: ls -la
-      
